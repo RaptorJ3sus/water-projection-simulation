@@ -117,6 +117,7 @@ const SimulatorFunction = () => {
         tankInfo.tankLevelMetric < tankInfo.tankCapacity
       ) {
         totalWaterToSend = totalWaterToSend + train.trainWaterOutput;
+        //this is the one
         console.log(totalWaterToSend);
         const updatedTankLevelMetric =
           tankInfo.tankLevelMetric + train.trainWaterOutput;
@@ -127,7 +128,7 @@ const SimulatorFunction = () => {
 
         const updatedTankLevelMetricCarryOver =
           updatedTankLevelMetric - tankInfo.tankCapacity;
-        // create
+        // create another variable that interchanges with the total.. not sure how to do that though
         dispatch(
           produceWaterFromTrainToTank({
             tankId: train.currentTankId,

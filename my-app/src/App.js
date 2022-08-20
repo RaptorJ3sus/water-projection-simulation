@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import "./App.css";
+import TrainWrapper from "./features/trains/TrainWrapper";
+import TankWrapper from "./features/tanks/TankWrapper";
+import UserInput from "./features/UserInput/UserInput";
+import ConsumerWrapper from "./features/consumers/ConsumerWrapper";
+import SimulatorFunction from "./features/Simulator/SimulatorFunction";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserInput />
+      <TrainWrapper />
+      <TankWrapper />
+      <ConsumerWrapper />
+      <SimulatorFunction />
     </div>
   );
 }

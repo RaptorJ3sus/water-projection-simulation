@@ -1,11 +1,9 @@
 import React from "react";
 import Consumer from "./Consumer";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 
-const consumerWrapper = () => {
+const ConsumerWrapper = () => {
   const { consumers } = useSelector((store) => store.consumer);
-  const dispatch = useDispatch();
   return (
     <section>
       <header>
@@ -20,4 +18,4 @@ const consumerWrapper = () => {
   );
 };
 
-export default consumerWrapper;
+export default ConsumerWrapper;

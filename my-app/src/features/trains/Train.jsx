@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 
-const train = ({
+const Train = ({
   trainId,
   trainRunLength,
   trainWaterOutput,
@@ -9,10 +9,10 @@ const train = ({
   regenWaterRequired,
   currentTankId,
   produceWater,
-  regenWater,
-  estimatedRegenTime,
-  estimatedRunLength,
-  resetTrain,
+  //regenWater,
+  //estimatedRegenTime,
+  //estimatedRunLength,
+  //resetTrain,
 }) => {
   return (
     <Grid>
@@ -40,4 +40,4 @@ const train = ({
   );
 };
 
-export default train;
+export default Train;

@@ -30,7 +30,6 @@ const SimulatorFunction = () => {
       const switchRegenTankInfo = tanks.find((info) => {
         return info.tankLevelMetric > 0;
       });
-
       if (
         train.trainRunLength === 0 &&
         train.regenTime > 0 &&
@@ -163,7 +162,6 @@ const SimulatorFunction = () => {
           })
         );
       }
-
       return { ...train };
     });
   };

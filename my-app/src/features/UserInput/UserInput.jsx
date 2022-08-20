@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-//import tanks from "../../data/tank";
-//import { Box, Button } from "@mui/material";
 import { TextField } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Grid } from "@mui/material";
@@ -10,7 +8,6 @@ import { userInputTanks } from "../tanks/tankSlice";
 
 const UserInput = () => {
   const dispatch = useDispatch();
-  //const [tank, setTanks] = useState(tanks);
 
   const [tankId, setTankId] = useState("");
   const [tankLevelPercentage, setTankLevelPercentage] = useState(0);
@@ -22,7 +19,6 @@ const UserInput = () => {
     setTankId(e.target.value);
   };
   const handlePercentage = (e) => {
-    //transform to Int/Float
     setTankLevelPercentage(e.target.valueAsNumber);
   };
   const handleMetric = (e) => {
@@ -48,8 +44,6 @@ const UserInput = () => {
         ...singleTank,
       })
     );
-    //setTanks([...tank, singleTank]); // dispatch should be here
-    //console.log(singleTank);
   };
 
   return (
@@ -61,7 +55,6 @@ const UserInput = () => {
           "& > :not(style)": { m: 1, width: "25ch" },
         }}
         noValidate
-        //autocomplete="off"
       >
         <TextField
           type="text"

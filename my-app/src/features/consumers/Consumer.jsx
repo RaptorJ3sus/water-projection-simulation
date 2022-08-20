@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 
-const consumer = ({ consumerId, consumerWaterRequired, currentTankId }) => {
+const Consumer = ({ consumerId, consumerWaterRequired, currentTankId }) => {
   return (
     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
       <Grid item xs={2}>
@@ -17,4 +17,4 @@ const consumer = ({ consumerId, consumerWaterRequired, currentTankId }) => {
   );
 };
 
-export default consumer;
+export default Consumer;

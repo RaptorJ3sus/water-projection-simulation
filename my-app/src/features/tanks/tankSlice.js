@@ -1,10 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import tanks from "../../data/tank";
-
 const initialState = {
   tanks: tanks,
 };
-
 const tankSlice = createSlice({
   name: "tank",
   initialState,

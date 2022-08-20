@@ -8,7 +8,6 @@ const store = configureStore({
   reducer: {
     train: trainReducer,
     tank: tankReducer,
-    //distributionTank: distributionTankReducer,
     consumer: consumerReducer,
   },
 });

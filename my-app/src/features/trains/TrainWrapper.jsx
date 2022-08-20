@@ -16,7 +16,7 @@ import {
 import { resetTrainAfterRegen } from "./trainSlice";
 import { useDispatch } from "react-redux";
 
-const trainWrapper = () => {
+const TrainWrapper = () => {
   const dispatch = useDispatch();
   const { trains } = useSelector((store) => store.train);
   const { tanks } = useSelector((store) => store.tank);
@@ -187,4 +187,4 @@ const trainWrapper = () => {
   );
 };
 
-export default trainWrapper;
+export default TrainWrapper;

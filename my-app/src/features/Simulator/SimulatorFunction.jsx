@@ -19,7 +19,18 @@ const SimulatorFunction = () => {
   const dispatch = useDispatch();
   const { trains } = useSelector((store) => store.train);
   const { tanks } = useSelector((store) => store.tank);
+  const keys = Object.keys(trains);
+  //const [totalWaterToSend, setTotalWaterToSend] = useState(0);
+
+  const simulate2 = () => {
+    for (let i = 0; i < trains.length; i++) {
+      console.log(trains[keys[i]].trainRunLength);
+    }
+  };
+
   const simulate = () => {
+    let totalWaterToSend = 0;
+
     trains.map((train) => {
       const tankInfo = tanks.find((info) => {
         return info.tankId === train.currentTankId;
@@ -105,8 +116,16 @@ const SimulatorFunction = () => {
         train.trainRunLength > 0 &&
         tankInfo.tankLevelMetric < tankInfo.tankCapacity
       ) {
+        //setValue(value + train.trainWaterOutput);
         const updatedTankLevelMetric =
           tankInfo.tankLevelMetric + train.trainWaterOutput;
+        totalWaterToSend = totalWaterToSend + train.trainWaterOutput;
+        console.log(totalWaterToSend);
+
+        //console.log(updatedTankLevelMetric);
+        //setTotalWaterToSend(() => totalWaterToSend + train.trainWaterOutput);
+        //console.log(totalWaterToSend);
+
         const updatedTankLevelPercentage =
           (100 * updatedTankLevelMetric) / tankInfo.tankCapacity;
         const updatedTankLevelPercentageEx =
@@ -123,6 +142,9 @@ const SimulatorFunction = () => {
             tankLevelMetricCarryOver: updatedTankLevelMetricCarryOver,
           })
         );
+
+        //this is the problem, the tank level metric remains the initial state value
+        //console.log(tankInfo.tankLevelMetric);
       }
       if (
         train.trainRunLength === 0 &&
@@ -170,6 +192,7 @@ const SimulatorFunction = () => {
       <h2>Simulator Function</h2>
 
       <button onClick={() => simulate()}>Run Simulation</button>
+      <button onClick={() => simulate2()}>Run Simulation2</button>
     </div>
   );
 };

@@ -15,7 +15,6 @@ const trainSlice = createSlice({
   reducers: {
     switchRegenCurrentTankId: (state, action) => {
       state.trains = state.trains.map((trainInfo) => {
-        // [...state.tanks, action.payload]
         if (action.payload.trainId === trainInfo.trainId) {
           return {
             ...trainInfo,

@@ -116,16 +116,10 @@ const SimulatorFunction = () => {
         train.trainRunLength > 0 &&
         tankInfo.tankLevelMetric < tankInfo.tankCapacity
       ) {
-        //setValue(value + train.trainWaterOutput);
-        const updatedTankLevelMetric =
-          tankInfo.tankLevelMetric + train.trainWaterOutput;
         totalWaterToSend = totalWaterToSend + train.trainWaterOutput;
         console.log(totalWaterToSend);
-
-        //console.log(updatedTankLevelMetric);
-        //setTotalWaterToSend(() => totalWaterToSend + train.trainWaterOutput);
-        //console.log(totalWaterToSend);
-
+        const updatedTankLevelMetric =
+          tankInfo.tankLevelMetric + train.trainWaterOutput;
         const updatedTankLevelPercentage =
           (100 * updatedTankLevelMetric) / tankInfo.tankCapacity;
         const updatedTankLevelPercentageEx =
@@ -133,6 +127,7 @@ const SimulatorFunction = () => {
 
         const updatedTankLevelMetricCarryOver =
           updatedTankLevelMetric - tankInfo.tankCapacity;
+        // create
         dispatch(
           produceWaterFromTrainToTank({
             tankId: train.currentTankId,
